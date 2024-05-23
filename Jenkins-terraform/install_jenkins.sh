@@ -36,8 +36,11 @@ sudo apt update && sudo apt install terraform
 #install Kubectl on Jenkins
 sudo apt update
 sudo apt install curl -y
-curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+curl -LO https://dl.k8s.io/release/v1.29.0/bin/linux/amd64/kubectl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+chmod +x kubectl
+mkdir -p ~/.local/bin
+mv ./kubectl ~/.local/bin/kubectl
 kubectl version --client
 
 #install Aws cli 
